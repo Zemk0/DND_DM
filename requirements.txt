@@ -1,0 +1,22 @@
+# HTTP requests for Ollama API
+requests
+
+# Text-to-Speech (neural / cinematic voices)
+edge-tts
+pygame
+
+# Optional offline TTS fallback
+pyttsx3
+
+# Optional sound playback (older method)
+playsound==1.2.2
+
+# Speech-to-Text
+openai-whisper
+sounddevice
+scipy
+numpy
+keyboard
+
+# Core Python packages (no install needed, for reference)
+# os, sys, time, random, json, dataclasses, enum, typing
