@@ -68,7 +68,7 @@ This installs:
 1. Run the main script:
 
 ```bash
-python main.py
+python DM.py
 ```
 
 2. Follow prompts to:
