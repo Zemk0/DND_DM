@@ -2,6 +2,8 @@ import whisper
 import sounddevice as sd
 from scipy.io.wavfile import write
 import numpy as np
+import subprocess
+import os
 
 MODEL = whisper.load_model("base")
 SAMPLE_RATE = 44100 #16000
@@ -40,7 +42,24 @@ def listen():
     elif choice == "2":
         record_manual()
         result = MODEL.transcribe("input.wav")
-        return result["text"]
+        transcript = result["text"]
+
+        # Save transcript to file
+        filename = "transcript.txt"
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write(transcript)
+
+        print("\nOpening transcript in Notepad for editing...")
+        
+        # Open Notepad and wait until it closes
+        subprocess.run(["notepad.exe", filename])
+
+        # Read corrected version
+        with open(filename, "r", encoding="utf-8") as f:
+            corrected_text = f.read().strip()
+
+        os.remove(filename)
+        return corrected_text
 
     else:
         print("Invalid choice.")
