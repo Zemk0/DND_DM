@@ -51,7 +51,6 @@ def listen():
 
         print("\nOpening transcript in Notepad for editing...")
         
-        # Open Notepad and wait until it closes
         subprocess.run(["notepad.exe", filename])
 
         # Read corrected version
@@ -59,6 +58,7 @@ def listen():
             corrected_text = f.read().strip()
 
         os.remove(filename)
+        os.remove("input.wav")
         return corrected_text
 
     else:
