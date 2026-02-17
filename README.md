@@ -34,17 +34,7 @@ DragonMaster requires a local **Ollama server** to generate DM responses.
 ```bash
 ollama pull llama2
 ```
-
-3. Start the Ollama server:
-
-```bash
-ollama serve
-```
-
-The default server URL is `http://localhost:11434`.
-
----
-
+ 
 ### 3. Install Python Dependencies
 
 All required Python packages are listed in `requirements.txt`:
