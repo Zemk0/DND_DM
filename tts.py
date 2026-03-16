@@ -2,6 +2,7 @@ import asyncio
 import edge_tts
 import pygame
 import time
+import os
 
 VOICE = "en-GB-RyanNeural"
 
@@ -17,6 +18,8 @@ async def generate_voice(text, filename="story.mp3"):
     await communicate.save(filename)
 
 def speak(text):
+    if os.path.exists("story.mp3"):
+        os.remove("story.mp3")
     asyncio.run(generate_voice(text))
 
     pygame.mixer.music.load("story.mp3")

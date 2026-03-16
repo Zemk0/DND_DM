@@ -561,7 +561,6 @@ class DnDGame:
             time.sleep(0.3)
             speak(response)
             time.sleep(0.5)
-            os.remove("story.mp3")
         else:
             print("[ERROR] Could not get initial response from DM.")
             print("Check your Ollama connection with /reconnect")
